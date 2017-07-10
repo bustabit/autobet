@@ -1,0 +1,9 @@
+{
+  "private": true,
+  "scripts": {
+    "toc": "markdown-toc -i README.md"
+  },
+  "devDependencies": {
+    "markdown-toc": "^1.0.3"
+  }
+}
