@@ -3,7 +3,7 @@ var config = {
   payout: { value: 2, type: 'multiplier' },
   stop: { value: 1e8, type: 'balance', label: 'stop if bet >' },
   loss: {
-    value: 'base', type: 'radio', label: 'On Loss',
+    value: 'increase', type: 'radio', label: 'On Loss',
     options: {
       base: { type: 'noop', label: 'Return to base bet' },
       increase: { value: 2, type: 'multiplier', label: 'Increase bet by' },
@@ -41,7 +41,6 @@ function onGameEnded() {
 
   // we won..
   if (lastGame.cashedAt) {
-
     if (config.win.value === 'base') {
       currentBet = config.baseBet.value;
     } else {
