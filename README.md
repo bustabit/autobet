@@ -149,8 +149,12 @@ respond to events.
 
 Events:
 
-- `"GAME_STARTING"`
+- `"GAME_STARTING"`: Emitted 5 or seconds before the game actual starts. Bets are accepted.
+- `"GAME_STARTED"`: Bets are no longer accepted.
 - `"GAME_ENDED"`
+- `"PLACED_BET" bet`: Whenever a player places a bet, your listener will receive the `bet` object.
+- `"PLAYERS_CHANGED"`: Is emitted whenever a player makes a bet or cashes out. This means that
+  `engine.players` and `engine.cashOuts` have been updated, respectively.
 - ...
 
 Methods:
@@ -159,6 +163,8 @@ Methods:
   So, `engine.bet(100, 2)` means that you are betting 100 satoshis (1 bit) with
   an autocashout at 2x. If you don't want an autocashout, just set it really high:
   `engine.bet(100, Number.MAX_VALUE)`.
+- `engine.getState()`: Serializes the state of the engine into a javascript object.
+  Can be useful for debugging.
 
 Properties:
 
@@ -166,12 +172,16 @@ Properties:
     - `engine.history.first()`: the latest game. If `game.crashedAt` is not set, then it's the current game-in-progress.
     - `engine.history.last()`: the oldest game in the buffer which only stores the latest 100 games.
     - `engine.history.toArray()`: returns an `Array<Game>` so that you can use regular array methods to process the history.
+- `engine.playing`: A `Map()` of usernames to their bet amount. Only includes players that have not yet cashed out.
+- `engine.cashOuts`: An array of `{ wager: satoshis, uname: String, cashedAt: Float }` of all cashed out players.
     
 #### A Game object
 
 `engine.history` contains game objects with these keys:
 
-- `game._At` (nullable float, ex: `1.32`): 
+- `game.gameId` (integer)
+- `game.hash` (string)
+- `game.bust` (nullable float, ex: `1.32`): 
   The multiplier that the game crashed at. 
   If it is not set, then the game is currently in progress.
 - `game.cashedAt` (nullable float, ex: `103.45`):
@@ -186,13 +196,55 @@ Example:
 
 ```javascript
 {
-  _At: 3.21, // or null
+  gameId: 114124,
+  hash: '92a2adb04da8231447104f9668ac1f646e1046bbdb77333f75e8bc23e871052d',
+  bust: 3.21, // or null
   cashedAt: null, // or 102.34
   wager: 1000, // that's 10 bits
 }
 ```
 
-#### The Stores
+#### The UserInfo Store
+
+Scripts have access to another variable, `userInfo`, which emits events and exposes info about you,
+the currently logged-in user.
+
+Useful Events:
+
+- `BALANCE_CHANGED`: User balance changed
+- `BANKROLL_STATS_CHANGED`: User's investment in the bankroll changed
+
+Useful Properties:
+
+- `userInfo.balance`: User balance in satoshis
+- `userInfo.bets`: Total amount of user's bets
+- `userInfo.wagered`: Total amount of satoshis user has wagered
+- `userInfo.invested`: Total amount user has invested in the bankroll
+- `userInfo.profit`
+- `userInfo.unpaidDeposits`
+
+#### The Chat Store
+
+Scripts have access to another variable, `chat`, which emits events and exposes info about the chat,
+channels, and private messages.
+
+Useful Events:
+
+- `FRIENDS_CHANGED`: When you have added/removed a friend.
+
+Useful Properties:
+
+- `chat.channels` (Map): Map of joined channels which maps channel name to `{ unread: int, history: Array<{message, uname, created}> }`
+- `chat.friends` (Map): Your current friends list. Maps username to `{ unread: int, history: Array<{message, uname, created}> }`
+
+#### Displaying Output
+
+Your script can use `log('hello', 'world')` which will
+println info to a textbox beneath the script while the
+script is running.
+
+It's useful for debugging but also providing the user with
+a feed of script activity so that they know what's going on.
 
 
 
