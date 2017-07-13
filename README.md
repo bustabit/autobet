@@ -130,8 +130,29 @@ Every Input Object has a `type` which is one of:
     ```
     
     ![](https://dl.dropboxusercontent.com/spa/quq37nq1583x0lf/xur6zalg.png)
-- `balance`: TODO
-- `multiplier`: TODO
+- `balance`: Creates a type="number" input that accepts values in bits but exposes the
+   value as satoshis to the script.
+
+    ```javascript
+    var config = {
+      baseBet: { value: 100, type: 'balance', label: 'base bet' }
+    };
+    ```
+    
+    **Important**: Notice how the value is `100` (satoshis), but
+    it's exposed as `1` to the user in the UI.
+    
+    ![](https://www.dropbox.com/s/coi5v045hhlvyby/u2dkvpxk.png?raw=1)
+
+- `multiplier`: Creates a text field input that accepts payout multiplier inputs like `2.0`.
+
+    ```javascript
+    var config = {
+      basePayout: { value: 2, type: 'multiplier', label: 'base payout' }
+    };
+    ```
+    
+    ![](https://www.dropbox.com/s/jbmmnh96k7uez9n/lk37zl39.png?raw=1)
 
 ### Interacting with the game
 
