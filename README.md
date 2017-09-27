@@ -7,15 +7,17 @@ This repository contains scripts that can be fed into
 
 <!-- toc -->
 
-- [How to use a script](#how-to-use-a-script)
 - [How to write a script](#how-to-write-a-script)
   * [Bits vs Satoshis](#bits-vs-satoshis)
   * [The UI Config](#the-ui-config)
     + [Input Objects](#input-objects)
+    + [Required vs optional inputs](#required-vs-optional-inputs)
   * [Interacting with the game](#interacting-with-the-game)
     + [The Engine API](#the-engine-api)
     + [A Game object](#a-game-object)
-    + [The Stores](#the-stores)
+    + [The UserInfo Store](#the-userinfo-store)
+    + [The Chat Store](#the-chat-store)
+    + [Displaying Output](#displaying-output)
 
 <!-- tocstop -->
 
@@ -176,7 +178,7 @@ log('hello', config.name.value);
 if (config.colors.value) {
   log('you chose the color', config.colors.value);
 } else {
-  log('you did not choose a color);
+  log('you did not choose a color');
 }
 ```
 
