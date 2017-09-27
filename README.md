@@ -3,11 +3,6 @@
 This repository contains scripts that can be fed into
 <https://bustabit.com>'s autobetter.
 
-If you would like to contribute or improve a script to
-our repository, just submit a pull request.
-
-TODO: Community scripts can be found in the `contrib` folder.
-
 ## Table of Contents
 
 <!-- toc -->
@@ -23,10 +18,6 @@ TODO: Community scripts can be found in the `contrib` folder.
     + [The Stores](#the-stores)
 
 <!-- tocstop -->
-
-## How to use a script
-
-TODO
 
 ## How to write a script
     
@@ -153,6 +144,41 @@ Every Input Object has a `type` which is one of:
     ```
     
     ![](https://www.dropbox.com/s/jbmmnh96k7uez9n/lk37zl39.png?raw=1)
+
+#### Required vs optional inputs
+
+By default, all inputs are required which means that the
+user must fill them in (text inputs) or select an option
+(radio buttons) before the "Start Script" button will
+launch the script.
+
+You can mark an input as optional with `optional: true`.
+
+For example, in the following example, the "name" field is required, so our
+script can assume it exists. But the user is not required to choose a color,
+so `config.colors.value` may be `"red"`, `"blue"`, or `undefined`.
+
+```javascript
+var config = {
+  name: { value: '', type: 'text', label: 'What is your name?' },
+  colors: {
+    optional: true,
+    type: 'radio', label: 'Pick a color',
+    options: {
+      red: { value: 'red', type: 'noop', label: 'Red' },
+      blue: { value: 'blue', type: 'noop', label: 'Blue' },
+    }
+  }
+};
+
+log('hello', config.name.value);
+
+if (config.colors.value) {
+  log('you chose the color', config.colors.value);
+} else {
+  log('you did not choose a color);
+}
+```
 
 ### Interacting with the game
 
