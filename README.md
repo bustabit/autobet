@@ -1,7 +1,7 @@
 # Bustabit Scripts
 
-This repository contains scripts that can be fed into
-<https://bustabit.com>'s autobetter.
+This repository documents <https://bustabit.com>'s
+autobetter / scripting system.
 
 ## Table of Contents
 
@@ -35,6 +35,15 @@ This repository contains scripts that can be fed into
 - bitcoins -> satoshis : `Math.round(bitcoins / 1e8)`
 
 ### The UI Config
+
+One of the key features of bustabit's new scripting system
+is that scripts can specify a user interface for the user
+to fill out before clicking "Start Script".
+
+This allows the script to read user-defined variables,
+and it makes scripts more user-friendly for the player.
+
+----
 
 At the top of every script, you must define the **UI Config**.
 
