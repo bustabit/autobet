@@ -229,8 +229,11 @@ Methods:
   So, `engine.bet(100, 2)` means that you are betting 100 satoshis (1 bit) with
   an autocashout at 2x. If you don't want an autocashout, just set it really high:
   `engine.bet(100, Number.MAX_VALUE)`.
-- `engine.getState()`: Serializes the state of the engine into a javascript object.
-  Can be useful for debugging.
+- `engine.getState()`: Serializes the state of the engine into a javascript object. Can be useful for debugging.
+- `engine.getCurrentBet()`: Returns falsey if you have no bet placed, else it returns `{ wager: number, payout: number }`.
+- `engine.isQueuedBet()`: Returns boolean, true if you have a bet enqueued for next game.
+- `engine.cancelQueuedBet()`: Cancels the bet that you have enqueued for next game.
+- `engine.cashOut()`: Attempts to cash out the current game.
 
 Properties:
 
