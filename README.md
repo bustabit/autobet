@@ -219,6 +219,8 @@ Events:
 - `"PLACED_BET" bet`: Whenever a player places a bet, your listener will receive the `bet` object.
 - `"PLAYERS_CHANGED"`: Is emitted whenever a player makes a bet or cashes out. This means that
   `engine.players` and `engine.cashOuts` have been updated, respectively.
+- `"CASHED_OUT" object`: Whenever a player cashed out, this event broadcasts an object
+that looks like `{ uname: string, wager: int, cashedAt: float (multiplier) }`.
 - ...
 
 Methods:
