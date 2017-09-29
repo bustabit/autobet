@@ -22,12 +22,12 @@ autobetter / scripting system.
 <!-- tocstop -->
 
 ## How to write a script
-    
+
 ### Bits vs Satoshis
 
 **Important:** The client and server talk in satoshis even though the user interface shows bits.
 
-- bits -> satoshis: `bits * 100` 
+- bits -> satoshis: `bits * 100`
 - bits -> bitcoins: `bits * 1e6`
 - satoshis -> bits: `Math.round(satoshis / 100)`
 - satoshis -> bitcoins: `satoshis * 1e8`
@@ -98,12 +98,12 @@ Every Input Object has a `type` which is one of:
       name2: { value: 'initial value', type: 'text', label: 'Another field' }
     }
     ```
-  
+
     ![](https://dl.dropboxusercontent.com/spa/quq37nq1583x0lf/ok4wkz2a.png)
 
 - `noop`: A noop input just means that it does not embed an interactive control.
   You usually use them inside a `radio` input.
-  
+
     ```javascript
     var config = {
       noopExample: { type: 'noop', label: 'Demonstrating noop' },
@@ -113,7 +113,7 @@ Every Input Object has a `type` which is one of:
     ```
 
     ![](https://dl.dropboxusercontent.com/spa/quq37nq1583x0lf/zdhty8sk.png)
-    
+
 - `radio`: Maps to HTML radio buttons.
 
     Notice that `value: 'red'` means that `options.red` will
@@ -130,7 +130,7 @@ Every Input Object has a `type` which is one of:
       }
     }
     ```
-    
+
     ![](https://dl.dropboxusercontent.com/spa/quq37nq1583x0lf/xur6zalg.png)
 - `balance`: Creates a type="number" input that accepts values in bits but exposes the
    value as satoshis to the script.
@@ -140,10 +140,10 @@ Every Input Object has a `type` which is one of:
       baseBet: { value: 100, type: 'balance', label: 'base bet' }
     };
     ```
-    
+
     **Important**: Notice how the value is `100` (satoshis), but
     it's exposed as `1` to the user in the UI.
-    
+
     ![](https://www.dropbox.com/s/coi5v045hhlvyby/u2dkvpxk.png?raw=1)
 
 - `multiplier`: Creates a text field input that accepts payout multiplier inputs like `2.0`.
@@ -153,7 +153,7 @@ Every Input Object has a `type` which is one of:
       basePayout: { value: 2, type: 'multiplier', label: 'base payout' }
     };
     ```
-    
+
     ![](https://www.dropbox.com/s/jbmmnh96k7uez9n/lk37zl39.png?raw=1)
 
 #### Required vs optional inputs
@@ -205,6 +205,12 @@ The script has access to an `engine` variable which is
 an Event Emitter. You attach listeners to the engine to
 respond to events.
 
+```javascript
+engine.on('GAME_STARTING', function () {
+  log('a game is starting')
+})
+```
+
 Events:
 
 - `"GAME_STARTING"`: Emitted 5 or seconds before the game actual starts. Bets are accepted.
@@ -217,7 +223,7 @@ Events:
 
 Methods:
 
-- `engine.bet(satoshis: Integer, payout: Float)`: 
+- `engine.bet(satoshis: Integer, payout: Float)`:
   So, `engine.bet(100, 2)` means that you are betting 100 satoshis (1 bit) with
   an autocashout at 2x. If you don't want an autocashout, just set it really high:
   `engine.bet(100, Number.MAX_VALUE)`.
@@ -232,21 +238,21 @@ Properties:
     - `engine.history.toArray()`: returns an `Array<Game>` so that you can use regular array methods to process the history.
 - `engine.playing`: A `Map()` of usernames to their bet amount. Only includes players that have not yet cashed out.
 - `engine.cashOuts`: An array of `{ wager: satoshis, uname: String, cashedAt: Float }` of all cashed out players.
-    
+
 #### A Game object
 
 `engine.history` contains game objects with these keys:
 
 - `game.gameId` (integer)
 - `game.hash` (string)
-- `game.bust` (nullable float, ex: `1.32`): 
-  The multiplier that the game crashed at. 
+- `game.bust` (nullable float, ex: `1.32`):
+  The multiplier that the game crashed at.
   If it is not set, then the game is currently in progress.
 - `game.cashedAt` (nullable float, ex: `103.45`):
-  The multiplier that **WE** cashed-out at. 
+  The multiplier that **WE** cashed-out at.
   If it is not set, then we either did not play that game
-  or the game busted before you cashed out. 
-  You can check the existence of this value to determine 
+  or the game busted before you cashed out.
+  You can check the existence of this value to determine
   if we won that game or not.
 - `game.wager` (satoshis, integer, ex: `100`)
 
