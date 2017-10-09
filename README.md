@@ -315,7 +315,15 @@ script is running.
 It's useful for debugging but also providing the user with
 a feed of script activity so that they know what's going on.
 
+#### Stopping the Script
 
+A script can stop itself with `stop(reason)`.
 
+The reason (a string) will be published to the scripts logs so
+that the player understands why the script stopped itself.
 
-
+``` javascript
+if (userInfo.balance < config.wager.value) {
+  stop('Insufficient balance to make the bet')
+}
+```
