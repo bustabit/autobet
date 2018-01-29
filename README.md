@@ -28,12 +28,12 @@ autobetter / scripting system.
 
 **Important:** The client and server talk in satoshis even though the user interface shows bits.
 
-- bits -> satoshis: `bits * 100`
-- bits -> bitcoins: `bits * 1e6`
-- satoshis -> bits: `Math.round(satoshis / 100)`
-- satoshis -> bitcoins: `satoshis * 1e8`
-- bitcoins -> bits : `Math.round(bitcoins / 1e6)`
-- bitcoins -> satoshis : `Math.round(bitcoins / 1e8)`
+- bits -> satoshis: `Math.round(bits * 100)`
+- bits -> bitcoins: `bits / 1e6`
+- satoshis -> bits: `satoshis / 100`
+- satoshis -> bitcoins: `satoshis / 1e8`
+- bitcoins -> bits : `Math.round(bitcoins * 1e8) / 1e6`
+- bitcoins -> satoshis : `Math.round(bitcoins * 1e8)`
 
 ### The UI Config
 
