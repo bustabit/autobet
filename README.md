@@ -18,6 +18,7 @@ autobetter / scripting system.
     + [The UserInfo Store](#the-userinfo-store)
     + [The Chat Store](#the-chat-store)
     + [Displaying Output](#displaying-output)
+    + [Stopping the Script](#stopping-the-script)
 
 <!-- tocstop -->
 
