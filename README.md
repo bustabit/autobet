@@ -214,7 +214,7 @@ engine.on('GAME_STARTING', function () {
 
 Events:
 
-- `"GAME_STARTING"`: Emitted 5 or seconds before the game actual starts. Bets are accepted.
+- `"GAME_STARTING"`: Emitted when the server starts accepting bets 5 seconds before the game actually starts.
 - `"GAME_STARTED"`: Bets are no longer accepted.
 - `"GAME_ENDED"`
 - `"PLACED_BET" bet`: Whenever a player places a bet, your listener will receive the `bet` object.
