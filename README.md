@@ -233,7 +233,7 @@ Methods:
   `engine.bet(100, Number.MAX_VALUE)`.
 - `engine.getState()`: Serializes the state of the engine into a javascript object. Can be useful for debugging.
 - `engine.getCurrentBet()`: Returns falsey if you have no bet placed, else it returns `{ wager: number, payout: number }`.
-- `engine.isQueuedBet()`: Returns boolean, true if you have a bet enqueued for next game.
+- `engine.isBetQueued()`: Returns boolean, true if you have a bet enqueued for next game.
 - `engine.cancelQueuedBet()`: Cancels the bet that you have enqueued for next game.
 - `engine.cashOut()`: Attempts to cash out the current game.
 
