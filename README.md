@@ -132,8 +132,22 @@ Every Input Object has a `type` which is one of:
       }
     }
     ```
-
+    
     ![](https://dl.dropboxusercontent.com/spa/quq37nq1583x0lf/xur6zalg.png)
+
+    
+- `checkbox`: Maps to HTML check boxes.
+    ```javascript
+    var config = {
+      option0: { type: 'checkbox', label: 'Red', value: true },
+      option2: { type: 'checkbox', label: 'Yellow', value: false },
+      option1: { type: 'checkbox', label: 'Blue', value: true }
+    };
+    ```
+    
+    ![](https://www.dropbox.com/s/nypyy8xo0ujrx0b/Screenshot%20from%202018-10-31%2018-14-00.png?raw=1)
+
+
 - `balance`: Creates a type="number" input that accepts values in bits but exposes the
    value as satoshis to the script.
 
