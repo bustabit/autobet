@@ -100,7 +100,6 @@ Every Input Object has a `type` which is one of:
       name2: { value: 'initial value', type: 'text', label: 'Another field' }
     }
     ```
-
     ![](https://dl.dropboxusercontent.com/spa/quq37nq1583x0lf/ok4wkz2a.png)
 
 - `noop`: A noop input just means that it does not embed an interactive control.
@@ -113,7 +112,6 @@ Every Input Object has a `type` which is one of:
       noopExample2: { type: 'noop' }
     }
     ```
-
     ![](https://dl.dropboxusercontent.com/spa/quq37nq1583x0lf/zdhty8sk.png)
 
 - `radio`: Maps to HTML radio buttons.
@@ -132,19 +130,17 @@ Every Input Object has a `type` which is one of:
       }
     }
     ```
-    
     ![](https://dl.dropboxusercontent.com/spa/quq37nq1583x0lf/xur6zalg.png)
 
     
 - `checkbox`: Maps to HTML check boxes.
     ```javascript
     var config = {
-      option0: { type: 'checkbox', label: 'Red', value: true },
-      option2: { type: 'checkbox', label: 'Yellow', value: false },
-      option1: { type: 'checkbox', label: 'Blue', value: true }
+      red: { type: 'checkbox', label: 'Red', value: true },
+      yellow: { type: 'checkbox', label: 'Yellow', value: false },
+      blue: { type: 'checkbox', label: 'Blue', value: true }
     };
     ```
-    
     ![](https://www.dropbox.com/s/nypyy8xo0ujrx0b/Screenshot%20from%202018-10-31%2018-14-00.png?raw=1)
 
 
