@@ -83,7 +83,7 @@ log('hello', config.name.value, 'you chose the color', config.colors.value)
 
 And here's the UI it generates:
 
-![red vs blue ui example](https://dl.dropboxusercontent.com/spa/quq37nq1583x0lf/-w8ltqrk.png)
+![](https://ucea75a6092079ee9ef40bd6c323.dl.dropboxusercontent.com/cd/0/inline/Aov0hUzkNsnxYcPFR628lPMki2KvFdoC_vWufEqpKatUDFiJfP9pdDyd9utAhH-C3VpyDAafDWFpcdLlCfbU8Y2vfpbJP1MWWigQ174lR03tEN_r_NUvChbsnE9DbaNHpDs/file)
 
 #### Input Objects
 
@@ -100,7 +100,7 @@ Every Input Object has a `type` which is one of:
       name2: { value: 'initial value', type: 'text', label: 'Another field' }
     }
     ```
-    ![](https://dl.dropboxusercontent.com/spa/quq37nq1583x0lf/ok4wkz2a.png)
+    ![](https://uc88363325b2ce4f685f4df5b5cb.dl.dropboxusercontent.com/cd/0/inline/AoskTXBAM9ch5vrCpUicStkrhhSDaIq80fHsFOr7cBQE1qPBURR4cFLpnf4qYrphUo3K-8sCa-Qf0HIekVZRA7m-HXsJcXWgQtWYB6hglXlROGByIeoOBAHr8N4RT-mbCnk/file)
 
 - `noop`: A noop input just means that it does not embed an interactive control.
   You usually use them inside a `radio` input.
@@ -112,7 +112,7 @@ Every Input Object has a `type` which is one of:
       noopExample2: { type: 'noop' }
     }
     ```
-    ![](https://dl.dropboxusercontent.com/spa/quq37nq1583x0lf/zdhty8sk.png)
+    ![](https://uc22c6e0f5b513a32bcacc9165a4.dl.dropboxusercontent.com/cd/0/inline/AotcAgUOHhIcvH_0wwuhttOsUzKethOotRrcnj8ziEPgNjBOEExWY568BDBw1i6GrziZxZzBR5U4vZiehxd4uMzc7zhiDQuRiXZY90_JZN2r5z53GgS1jWZ64QtZ4XvVTPk/file)
 
 - `radio`: Maps to HTML radio buttons.
 
@@ -130,7 +130,7 @@ Every Input Object has a `type` which is one of:
       }
     }
     ```
-    ![](https://dl.dropboxusercontent.com/spa/quq37nq1583x0lf/xur6zalg.png)
+    ![](https://uc8309556a0e13a7fd7e5cf3fe96.dl.dropboxusercontent.com/cd/0/inline/Aot1MPiaIr1QPmNAAh42wYpWQp4MAubyF1ddP9_xHKvhulvM1X1RYnEB_Yy3NcozsWxDGGEEbBfbeoJc9M2Rwcc-JHLF3Gws0tSMyAqNG3-S8YeFpIieVGEXfdzCH7mzCmo/file)
 
     
 - `checkbox`: Maps to HTML check boxes.
@@ -141,7 +141,7 @@ Every Input Object has a `type` which is one of:
       blue: { type: 'checkbox', label: 'Blue', value: true }
     };
     ```
-    ![](https://www.dropbox.com/s/nypyy8xo0ujrx0b/Screenshot%20from%202018-10-31%2018-14-00.png?raw=1)
+    ![](https://ucfdfff8c59f04e07de4e4cb9c84.dl.dropboxusercontent.com/cd/0/inline/Aospf_27XdlVwXIhondYXgyWNYIEfE4ZtLL883JgKjOJW2uC-HQGKuK7fb7DAf0hQXb9qqH7BeyjYkXtNw22_EEBe_83hgKhTdgF6-imJz1QpvgWM63Kyj-mALrndhynMxc/file)
 
 
 - `balance`: Creates a type="number" input that accepts values in bits but exposes the
@@ -156,17 +156,17 @@ Every Input Object has a `type` which is one of:
     **Important**: Notice how the value is `100` (satoshis), but
     it's exposed as `1` to the user in the UI.
 
-    ![](https://www.dropbox.com/s/coi5v045hhlvyby/u2dkvpxk.png?raw=1)
+    ![](https://ucebc31fbd9281fcd4199bc9e66b.dl.dropboxusercontent.com/cd/0/inline/AotYSSteKcSzW0bKeAx48E7BoMbK_nMqQB4oTaZl424b_sZ961hKc2ECoGtByYChD4kO5nlrhZ7uSRvD1eSbGcCT4g5dIJri6MGsfXp21wfk7KC-FxP97z0dHQVqv2JODSM/file)
 
 - `multiplier`: Creates a text field input that accepts payout multiplier inputs like `2.0`.
 
     ```javascript
     var config = {
-      basePayout: { value: 2, type: 'multiplier', label: 'base payout' }
+      basePayout: { value: 2, type: 'multiplier', label: 'payout' }
     };
     ```
 
-    ![](https://www.dropbox.com/s/jbmmnh96k7uez9n/lk37zl39.png?raw=1)
+    ![](https://uca0cd7d504a6718fd5bbb3d9e4b.dl.dropboxusercontent.com/cd/0/inline/AotKRpxL9mQ8XWg-xcSXXsFB8mobGhc4afLQGHTcpKuOtlK32Mfcx76-tiK80hJoqu7k6rJ6KxQcrDh1-4hUXe6nR4Rp7akg8svy12jOlDHXXD9DW5Ic_wfObG537rHtH0Q/file)
 
 #### Required vs optional inputs
 
