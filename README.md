@@ -228,7 +228,7 @@ Events:
 - `"GAME_STARTING"`: Emitted when the server starts accepting bets 5 seconds before the game actually starts.
 - `"GAME_STARTED"`: Bets are no longer accepted.
 - `"GAME_ENDED"`
-- `"BET_PLACED" bet`: Whenever a player places a bet, your listener will receive the `bet` object.
+- `"BET_PLACED" bet`: Whenever a player places a bet, your listener will receive the `bet` object. This event is *not* emitted for simulated bets.
 - `"PLAYERS_CHANGED"`: Is emitted whenever a player makes a bet or cashes out. This means that
   `engine.players` and `engine.cashOuts` have been updated, respectively.
 - `"CASHED_OUT" object`: Whenever a player cashed out, this event broadcasts an object
