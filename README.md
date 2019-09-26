@@ -83,7 +83,7 @@ log('hello', config.name.value, 'you chose the color', config.colors.value)
 
 And here's the UI it generates:
 
-![](https://ucea75a6092079ee9ef40bd6c323.dl.dropboxusercontent.com/cd/0/inline/Aov0hUzkNsnxYcPFR628lPMki2KvFdoC_vWufEqpKatUDFiJfP9pdDyd9utAhH-C3VpyDAafDWFpcdLlCfbU8Y2vfpbJP1MWWigQ174lR03tEN_r_NUvChbsnE9DbaNHpDs/file)
+![](https://www.dropbox.com/s/ako4cm5l64c7r4t/Screenshot_2019-09-17%20bustabit%20%E2%80%93%20The%20original%20crash%20game%2812%29.png?raw=1)
 
 #### Input Objects
 
@@ -100,7 +100,7 @@ Every Input Object has a `type` which is one of:
       name2: { value: 'initial value', type: 'text', label: 'Another field' }
     }
     ```
-    ![](https://uc88363325b2ce4f685f4df5b5cb.dl.dropboxusercontent.com/cd/0/inline/AoskTXBAM9ch5vrCpUicStkrhhSDaIq80fHsFOr7cBQE1qPBURR4cFLpnf4qYrphUo3K-8sCa-Qf0HIekVZRA7m-HXsJcXWgQtWYB6hglXlROGByIeoOBAHr8N4RT-mbCnk/file)
+    ![](https://www.dropbox.com/s/1b4hrlgmhjh3a0z/Screenshot_2019-09-17%20bustabit%20%E2%80%93%20The%20original%20crash%20game%286%29.png?raw=1)
 
 - `noop`: A noop input just means that it does not embed an interactive control.
   You usually use them inside a `radio` input.
@@ -112,7 +112,7 @@ Every Input Object has a `type` which is one of:
       noopExample2: { type: 'noop' }
     }
     ```
-    ![](https://uc22c6e0f5b513a32bcacc9165a4.dl.dropboxusercontent.com/cd/0/inline/AotcAgUOHhIcvH_0wwuhttOsUzKethOotRrcnj8ziEPgNjBOEExWY568BDBw1i6GrziZxZzBR5U4vZiehxd4uMzc7zhiDQuRiXZY90_JZN2r5z53GgS1jWZ64QtZ4XvVTPk/file)
+    ![](https://www.dropbox.com/s/v7pxhl5obh9y1fn/Screenshot_2019-09-17%20bustabit%20%E2%80%93%20The%20original%20crash%20game%287%29.png?raw=1)
 
 - `radio`: Maps to HTML radio buttons.
 
@@ -130,7 +130,7 @@ Every Input Object has a `type` which is one of:
       }
     }
     ```
-    ![](https://uc8309556a0e13a7fd7e5cf3fe96.dl.dropboxusercontent.com/cd/0/inline/Aot1MPiaIr1QPmNAAh42wYpWQp4MAubyF1ddP9_xHKvhulvM1X1RYnEB_Yy3NcozsWxDGGEEbBfbeoJc9M2Rwcc-JHLF3Gws0tSMyAqNG3-S8YeFpIieVGEXfdzCH7mzCmo/file)
+    ![](https://www.dropbox.com/s/wmsikxodxjvlu3m/Screenshot_2019-09-17%20bustabit%20%E2%80%93%20The%20original%20crash%20game%288%29.png?raw=1)
 
     
 - `checkbox`: Maps to HTML check boxes.
@@ -141,7 +141,7 @@ Every Input Object has a `type` which is one of:
       blue: { type: 'checkbox', label: 'Blue', value: true }
     };
     ```
-    ![](https://ucfdfff8c59f04e07de4e4cb9c84.dl.dropboxusercontent.com/cd/0/inline/Aospf_27XdlVwXIhondYXgyWNYIEfE4ZtLL883JgKjOJW2uC-HQGKuK7fb7DAf0hQXb9qqH7BeyjYkXtNw22_EEBe_83hgKhTdgF6-imJz1QpvgWM63Kyj-mALrndhynMxc/file)
+    ![](https://www.dropbox.com/s/zxxzl6o90a7izgb/Screenshot_2019-09-17%20bustabit%20%E2%80%93%20The%20original%20crash%20game%289%29.png?raw=1)
 
 
 - `balance`: Creates a type="number" input that accepts values in bits but exposes the
@@ -156,7 +156,7 @@ Every Input Object has a `type` which is one of:
     **Important**: Notice how the value is `100` (satoshis), but
     it's exposed as `1` to the user in the UI.
 
-    ![](https://ucebc31fbd9281fcd4199bc9e66b.dl.dropboxusercontent.com/cd/0/inline/AotYSSteKcSzW0bKeAx48E7BoMbK_nMqQB4oTaZl424b_sZ961hKc2ECoGtByYChD4kO5nlrhZ7uSRvD1eSbGcCT4g5dIJri6MGsfXp21wfk7KC-FxP97z0dHQVqv2JODSM/file)
+    ![](https://www.dropbox.com/s/8z54pw98aujg5dm/Screenshot_2019-09-17%20bustabit%20%E2%80%93%20The%20original%20crash%20game%2810%29.png?raw=1)
 
 - `multiplier`: Creates a text field input that accepts payout multiplier inputs like `2.0`.
 
@@ -166,7 +166,7 @@ Every Input Object has a `type` which is one of:
     };
     ```
 
-    ![](https://uca0cd7d504a6718fd5bbb3d9e4b.dl.dropboxusercontent.com/cd/0/inline/AotKRpxL9mQ8XWg-xcSXXsFB8mobGhc4afLQGHTcpKuOtlK32Mfcx76-tiK80hJoqu7k6rJ6KxQcrDh1-4hUXe6nR4Rp7akg8svy12jOlDHXXD9DW5Ic_wfObG537rHtH0Q/file)
+    ![](https://www.dropbox.com/s/2dnndgn1gv7l1na/Screenshot_2019-09-17%20bustabit%20%E2%80%93%20The%20original%20crash%20game%2811%29.png?raw=1)
 
 #### Required vs optional inputs
 
