@@ -260,7 +260,7 @@ Properties:
 
 `engine.history` contains game objects with these keys:
 
-- `game.gameId` (integer)
+- `game.id` (integer)
 - `game.hash` (string)
 - `game.bust` (nullable float, ex: `1.32`):
   The multiplier that the game crashed at.
@@ -277,7 +277,7 @@ Example:
 
 ```javascript
 {
-  gameId: 114124,
+  id: 114124,
   hash: '92a2adb04da8231447104f9668ac1f646e1046bbdb77333f75e8bc23e871052d',
   bust: 3.21, // or null
   cashedAt: null, // or 102.34
