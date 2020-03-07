@@ -251,7 +251,7 @@ Properties:
 
 - `engine.history`: A circular buffer of games (not a Javascript array).
     - `engine.history.first()`: the latest game. If `game.crashedAt` is not set, then it's the current game-in-progress.
-    - `engine.history.last()`: the oldest game in the buffer which only stores the latest 100 games.
+    - `engine.history.last()`: the oldest game in the buffer which only stores the latest 50 games.
     - `engine.history.toArray()`: returns an `Array<Game>` so that you can use regular array methods to process the history.
 - `engine.playing`: A `Map()` of usernames to their bet amount. Only includes players that have not yet cashed out.
 - `engine.cashOuts`: An array of `{ wager: satoshis, uname: String, cashedAt: Float }` of all cashed out players.
