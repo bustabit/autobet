@@ -344,15 +344,15 @@ if (userInfo.balance < config.wager.value) {
 
 Two convenience functions are provided to aid in verifying game results: `gameResultFromHash` and `SHA256`.
 
-`gameResultFromHash(hash)` returns a Promise that resolves to the game result equivalent to the given game hash:
+`gameResultFromHash(hash)` returns the game result equivalent to the given game hash:
 
 ```javascript
 const hash = "6774ddd3dfe94e2c966d4ca5c5ed6dcd1f6a4fdab87ad12677ee7c5b96d6a3f5";
 gameResultFromHash(hash).then(log); // logs 3.74
 ```
 
-`SHA256(value)` returns a Promise that resolves to the SHA256 hash of `value`:
+`SHA256(value)` returns the SHA256 hash of `value`:
 
 ```javascript
-SHA256("hello world").then(log); // logs b94d27b9934d3e08a52e52d7da7dabfac484efe37a5380ee9088f7ace2efcde9
+log(SHA256("hello world")); // logs b94d27b9934d3e08a52e52d7da7dabfac484efe37a5380ee9088f7ace2efcde9
 ```
