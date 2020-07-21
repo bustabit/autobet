@@ -327,6 +327,20 @@ script is running.
 It's useful for debugging but also providing the user with
 a feed of script activity so that they know what's going on.
 
+#### Notifications
+
+If you want to emit browser notifications from the script,
+use `notify(message)`. This is good for sending yourself messages
+about notable events (like if the script is stopping itself) when
+you are viewing another browser tab or application.
+
+Note that you must have browser notifications enabled for bustabit.com.
+
+You may not always want a script to bother you with browser notifications.
+You can toggle this behavior in bustabit.com's global [settings](https://www.bustabit.com/game-settings).
+When script notifications are disabled, messages will simply appear
+in the script logs.
+
 #### Stopping the Script
 
 A script can stop itself with `stop(reason)`.
