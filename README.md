@@ -83,7 +83,7 @@ log('hello', config.name.value, 'you chose the color', config.colors.value)
 
 And here's the UI it generates:
 
-![](https://www.dropbox.com/s/ako4cm5l64c7r4t/Screenshot_2019-09-17%20bustabit%20%E2%80%93%20The%20original%20crash%20game%2812%29.png?raw=1)
+![](img/img1.png)
 
 #### Input Objects
 
@@ -100,7 +100,7 @@ Every Input Object has a `type` which is one of:
       name2: { value: 'initial value', type: 'text', label: 'Another field' }
     }
     ```
-    ![](https://www.dropbox.com/s/1b4hrlgmhjh3a0z/Screenshot_2019-09-17%20bustabit%20%E2%80%93%20The%20original%20crash%20game%286%29.png?raw=1)
+    ![](img/img2.png)
 
 - `noop`: A noop input just means that it does not embed an interactive control.
   You usually use them inside a `radio` input.
@@ -112,7 +112,7 @@ Every Input Object has a `type` which is one of:
       noopExample2: { type: 'noop' }
     }
     ```
-    ![](https://www.dropbox.com/s/v7pxhl5obh9y1fn/Screenshot_2019-09-17%20bustabit%20%E2%80%93%20The%20original%20crash%20game%287%29.png?raw=1)
+    ![](img/img3.png)
 
 - `radio`: Maps to HTML radio buttons.
 
@@ -130,7 +130,7 @@ Every Input Object has a `type` which is one of:
       }
     }
     ```
-    ![](https://www.dropbox.com/s/wmsikxodxjvlu3m/Screenshot_2019-09-17%20bustabit%20%E2%80%93%20The%20original%20crash%20game%288%29.png?raw=1)
+    ![](img/img4.png)
 
     
 - `checkbox`: Maps to HTML check boxes.
@@ -141,7 +141,7 @@ Every Input Object has a `type` which is one of:
       blue: { type: 'checkbox', label: 'Blue', value: true }
     };
     ```
-    ![](https://www.dropbox.com/s/zxxzl6o90a7izgb/Screenshot_2019-09-17%20bustabit%20%E2%80%93%20The%20original%20crash%20game%289%29.png?raw=1)
+    ![](img/img5.png)
 
 
 - `balance`: Creates a type="number" input that accepts values in bits but exposes the
@@ -156,7 +156,7 @@ Every Input Object has a `type` which is one of:
     **Important**: Notice how the value is `100` (satoshis), but
     it's exposed as `1` to the user in the UI.
 
-    ![](https://www.dropbox.com/s/8z54pw98aujg5dm/Screenshot_2019-09-17%20bustabit%20%E2%80%93%20The%20original%20crash%20game%2810%29.png?raw=1)
+    ![](img/img6.png)
 
 - `multiplier`: Creates a text field input that accepts payout multiplier inputs like `2.0`.
 
@@ -166,7 +166,27 @@ Every Input Object has a `type` which is one of:
     };
     ```
 
-    ![](https://www.dropbox.com/s/2dnndgn1gv7l1na/Screenshot_2019-09-17%20bustabit%20%E2%80%93%20The%20original%20crash%20game%2811%29.png?raw=1)
+    ![](img/img7.png)
+
+- `combobox`: Maps to HTML `<select>` dropdown options.
+
+    Notice that `value: 'red'` means that `options.red` will
+    be the initially-selected radio button.
+
+    ```javascript
+    var config = {
+      colors: {
+        value: 'red', 
+        type: 'combobox', 
+        label: 'Pick a color',
+        options: {
+          red: { label: 'Red' },
+          blue: { label: 'Blue' },
+        }
+      }
+    }
+    ```
+    ![](img/img8.png)
 
 #### Required vs optional inputs
 
