@@ -18,6 +18,7 @@ autobetter / scripting system.
     + [The UserInfo Store](#the-userinfo-store)
     + [The Chat Store](#the-chat-store)
     + [Displaying Output](#displaying-output)
+    + [Notifications](#notifications)
     + [Stopping the Script](#stopping-the-script)
     + [Verifying Game Results](#verifying-game-results)
 
@@ -313,21 +314,17 @@ the currently logged-in user.
 Useful Events:
 
 - `BALANCE_CHANGED`: User balance changed
-- `BANKROLL_STATS_CHANGED`: User's investment in the bankroll changed
 
 Useful Properties:
 
 - `userInfo.balance`: User balance in satoshis
 - `userInfo.bets`: Total amount of user's bets
 - `userInfo.wagered`: Total amount of satoshis user has wagered
-- `userInfo.invested`: Total amount user has invested in the bankroll
 - `userInfo.profit`
-- `userInfo.unpaidDeposits`
 
 #### The Chat Store
 
-Scripts have access to another variable, `chat`, which emits events and exposes info about the chat,
-channels, and private messages.
+Scripts have access to another variable, `chat`, which emits events and exposes info about public chat channels.
 
 Useful Events:
 
@@ -336,7 +333,6 @@ Useful Events:
 Useful Properties:
 
 - `chat.channels` (Map): Map of joined channels which maps channel name to `{ unread: int, history: Array<{message, uname, created}> }`
-- `chat.friends` (Map): Your current friends list. Maps username to `{ unread: int, history: Array<{message, uname, created}> }`
 
 #### Displaying Output
 
