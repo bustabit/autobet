@@ -372,17 +372,34 @@ if (userInfo.balance < config.wager.value) {
 
 #### Verifying Game Results
 
-Two convenience functions are provided to aid in verifying game results: `gameResultFromHash` and `SHA256`.
+Four convenience functions are provided to aid in verifying game results: `gameResultFromSignature`, `gameResultFromHash`, `SHA256FromHex` and `SHA256`. 
+
+`gameResultFromSignature(hash, id)` returns the game result equivalent to the given game hash and game id:
+
+```javascript
+const gameHash = "e1d3966787cb0ce17e9690a1f518fa58bd61a14fb556c55621fd6f061d430172";
+const gameId = 10004381;
+gameResultFromSignature(gameHash, gameId).then(log); // logs 8.16
+```
 
 `gameResultFromHash(hash)` returns the game result equivalent to the given game hash:
 
 ```javascript
+// for backward compatibility with bustabit's previous chain and game salt
 const hash = "6774ddd3dfe94e2c966d4ca5c5ed6dcd1f6a4fdab87ad12677ee7c5b96d6a3f5";
 gameResultFromHash(hash).then(log); // logs 3.74
 ```
 
-`SHA256(value)` returns the SHA256 hash of `value`:
+`SHA256FromHex(value)` returns the hash of the binary 256-bit value of `value`:
 
 ```javascript
-log(SHA256("hello world")); // logs b94d27b9934d3e08a52e52d7da7dabfac484efe37a5380ee9088f7ace2efcde9
+log(SHA256FromHex("cafe0123")); // logs 0dce08a9fb89bf0bef8d8b3960db34d21f3b3a77142692bf608ab87b5c1bc7d5
 ```
+
+`SHA256(value)` returns the hash of the hex-encoded string representation of `value`:
+
+```javascript
+// for backward compatibility
+log(SHA256("cafe0123")); // logs 34840c8af8ef4c93baa37aa9de666dd26d808317defcbc99093096cc67703648
+```
+
